@@ -1,0 +1,29 @@
+<div
+  [ngStyle]="{
+    'background-color': normalMsg == 'Correct Number!!! 🎉' ? '#60b347' : ''
+  }"
+>
+  <header>
+    <h1>Guess My Number!</h1>
+    <p class="between">(Between 1 and 20)</p>
+    <button class="btn again" (click)="again()">Again!</button>
+    <div class="number">
+      {{ normalMsg === "Correct Number!!! 🎉" ? num : "?" }}
+    </div>
+  </header>
+  <main>
+    <section class="left">
+      <input type="number" class="guess" [(ngModel)]="number" />
+      <button (click)="check()" class="btn check">Check!</button>
+    </section>
+    <section class="right">
+      <p class="message">{{ normalMsg }}</p>
+      <p class="label-score">
+        💯 Score: <span class="score">{{ score }}</span>
+      </p>
+      <p class="label-highscore">
+        🥇 Highscore: <span class="highscore">{{ highscore }}</span>
+      </p>
+    </section>
+  </main>
+</div>
